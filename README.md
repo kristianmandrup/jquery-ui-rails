@@ -14,6 +14,7 @@ In your Gemfile, add:
 
 ```ruby
 group :assets do
+  gem 'jquery-rails'
   gem 'jquery-ui-rails'
 end
 ```
@@ -23,8 +24,11 @@ end
 To require all jQuery UI modules, add the following to your application.js:
 
 ```javascript
+//= require jquery
 //= require jquery.ui.all
 ```
+
+You need to load `jquery` manually; jquery-ui-rails does not load it for you. Also note that for network performance, it is better to load jQuery library from Public CDN instead of packaging it into your assets. See Loading from Public CDN section.
 
 Also add the jQuery UI CSS to your application.css:
 
@@ -55,6 +59,7 @@ For example, if you only need the datepicker module, add this to your
 application.js:
 
 ```javascript
+//= require jquery
 //= require jquery.ui.datepicker
 ```
 
@@ -186,10 +191,26 @@ pulled in as dependencies.
 
 ## Loading from Public CDN
 
-To load jQuery UI JavaScript from Public CDN like [Google Hosted Libraries](https://developers.google.com/speed/libraries), use `Jquery::Ui::Rails::JQUERY_UI_VERSION` to get the version number in this gem:
+jQuery and jQuery UI can be found from Public CDNs like [Google Hosted Libraries](https://developers.google.com/speed/libraries). If you are using most features of these libraries, it is better to load them from Public CDN.
+
+In addition, jQuery UI depends on jQuery, which is not automatically `require`'d by any jQuery UI JavaScripts in this gem. You should load them manually, and it's better to load them from Public CDN.
+
+### jQuery
+
+To load jQuery JavaScript from Public CDN, use `Jquery::Rails::JQUERY_UI_VERSION` to get the version number in the jquery-rails gem:
+
+```erb
+<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/#{Jquery::Rails::JQUERY_VERSION}/jquery.min.js" %>
+<script>window.jQuery || document.write('<scr'+'ipt src="<%= javascript_path("jquery.min.js") %>"></scr'+'ipt>')</script><!-- local fallback -->
+```
+
+### jQuery UI
+
+To load jQuery UI JavaScript from Public CDN, use `Jquery::Ui::Rails::JQUERY_UI_VERSION` to get the version number in this gem:
 
 ```erb
 <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jqueryui/#{Jquery::Ui::Rails::JQUERY_UI_VERSION}/jquery-ui.min.js" %>
+<script>window.jQuery || document.write('<scr'+'ipt src="<%= javascript_path("jquery.ui.all.js") %>"></scr'+'ipt>')</script><!-- local fallback -->
 ```
 
 ## Contributing
