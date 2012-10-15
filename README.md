@@ -197,7 +197,7 @@ In addition, jQuery UI depends on jQuery, which is not automatically `require`'d
 
 ### jQuery
 
-To load jQuery JavaScript from Public CDN, use `Jquery::Rails::JQUERY_UI_VERSION` to get the version number in the jquery-rails gem:
+To load jQuery JavaScript from Public CDN, use `Jquery::Rails::JQUERY_VERSION` to get the version number in the jquery-rails gem:
 
 ```erb
 <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/#{Jquery::Rails::JQUERY_VERSION}/jquery.min.js" %>
