@@ -1,5 +1,13 @@
 # master
 
+# 2.1.0
+
+* `Jquery::Ui::Rails::JQUERY_UI_VERSION` indicates which version of jQuery UI
+  provided in this gem.
+* [Breaking] jquery.core.all no more automatically includes jquery.js from
+  jquery-rails gem. You need to include it manually. See Loading from Public
+  CDN section in README.
+
 # 2.0.2
 
 * Upgrade to jQuery UI 1.8.24
