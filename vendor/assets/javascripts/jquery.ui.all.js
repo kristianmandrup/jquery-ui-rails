@@ -28,6 +28,7 @@
 //= require jquery.ui.selectable
 //= require jquery.ui.slider
 //= require jquery.ui.sortable
+//= require jquery.ui.spinner
 //= require jquery.ui.tabs
 //= require jquery.ui.tooltip
 //= require jquery.ui.widget
