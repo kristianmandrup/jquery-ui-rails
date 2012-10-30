@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/joliss/jquery-ui-rails.png?branch=master)](http://travis-ci.org/joliss/jquery-ui-rails) [![Dependency Status](https://gemnasium.com/joliss/jquery-ui-rails.png)](https://gemnasium.com/joliss/jquery-ui-rails)
 
-This gem packages the jQuery UI 1.8.23 assets (JavaScripts, stylesheets, and
+This gem packages the jQuery UI 1.9.1 assets (JavaScripts, stylesheets, and
 images) for the Rails 3.1+ [asset
 pipeline](http://guides.rubyonrails.org/asset_pipeline.html), so you never have
 to download a custom package through the [web
@@ -26,6 +26,13 @@ To require all jQuery UI modules, add the following to your application.js:
 ```javascript
 //= require jquery
 //= require jquery.ui.all
+```
+
+or alternatively
+
+```javascript
+//= require jquery
+//= require jquery-ui-1.9.1
 ```
 
 You need to load `jquery` manually; jquery-ui-rails does not load it for you. Also note that for network performance, it is better to load jQuery library from Public CDN instead of packaging it into your assets. See Loading from Public CDN section.
@@ -123,7 +130,7 @@ for example:
 
 ```javascript
 //= require jquery.ui.datepicker
-//= require jquery.ui.datepicker-pt-BR
+//= require i18n/jquery.ui.datepicker-pt-BR
 ```
 
 Note that you still need to include the main datepicker module. It is not

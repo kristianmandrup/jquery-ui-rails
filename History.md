@@ -1,5 +1,9 @@
 # master
 
+# 2.2.0
+
+Upgraded to jQuery UI 1.9.1 (stable)
+
 # 2.1.0
 
 * `Jquery::Ui::Rails::JQUERY_UI_VERSION` indicates which version of jQuery UI
