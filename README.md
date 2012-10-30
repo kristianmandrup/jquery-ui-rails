@@ -45,6 +45,15 @@ Also add the jQuery UI CSS to your application.css:
  */
 ```
 
+Or alternatively
+
+```css
+/*
+ *= require jquery-ui-1.9.1
+ */
+```
+
+
 All images required by jQuery UI are automatically served through the asset
 pipeline, so you are good to go! For example, this code will add a
 [datepicker](http://jqueryui.com/demos/datepicker/):
